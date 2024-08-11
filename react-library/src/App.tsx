@@ -5,6 +5,7 @@ import { Footer } from './layouts/NavbarAndFooter/Footer';
 import { HomePage } from './layouts/HomePage/HomePage';
 import { SearchBooksPage } from './searchBooksPage/SearchBooksPage';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { BookCheckoutPage } from './layouts/BookCheckoutPage/BookCheckoutPage';
 
 export const App = () =>{
   return (
@@ -15,6 +16,7 @@ export const App = () =>{
       <Route path='/' element={<Navigate to="/home" />}></Route>
       <Route path='/home' element={<HomePage/>}></Route>
       <Route path='/search' element={<SearchBooksPage />}></Route>
+      <Route path='/checkout/:bookId' element={<BookCheckoutPage />}></Route>
     </Routes>
     </div>
     <Footer/>
