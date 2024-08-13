@@ -1,6 +1,6 @@
-export const StarsReview: React.FC<{ raiting: number, size: number }> = (props) => {
+export const StarsReview: React.FC<{ rating: number, size: number }> = (props) => {
 
-    let raiting = props.raiting;
+    let raiting = props.rating;
     let fullStars = 0;
     let halfStars = 0;
     let emptyStars = 0;
@@ -13,7 +13,7 @@ export const StarsReview: React.FC<{ raiting: number, size: number }> = (props) 
             }else if (raiting === .5) {
                 halfStars = halfStars + 1;
                 raiting = raiting - .5;
-            }else if (raiting == 0) {
+            }else if (raiting === 0) {
                 emptyStars = emptyStars + 1;
             }else{
                 break;
