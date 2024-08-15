@@ -1,6 +1,7 @@
 import { useOktaAuth } from "@okta/okta-react";
 import { Navigate } from "react-router-dom";
 import { SpinnerLoading } from "../layouts/utils/SpinnerLoading";
+import OktaSignInWidget from "./OktaSignInWidget";
 
 const LoginWidget = ({config})=>{
     const {oktaAuth, authState} = useOktaAuth();
@@ -22,7 +23,7 @@ const LoginWidget = ({config})=>{
     return authState.isAuthenticated ?
     <Navigate to="/" />
     :
-    <div></div>
+    <OktaSignInWidget config={config} onSuccess={onSuccess} onError={onError} />
 }
 
 export default LoginWidget;
