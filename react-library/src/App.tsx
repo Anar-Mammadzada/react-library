@@ -4,7 +4,7 @@ import { Navbar } from './layouts/NavbarAndFooter/Navbar';
 import { Footer } from './layouts/NavbarAndFooter/Footer';
 import { HomePage } from './layouts/HomePage/HomePage';
 import { SearchBooksPage } from './searchBooksPage/SearchBooksPage';
-import { Routes, Route, Navigate, useNavigate, replace } from 'react-router-dom';
+import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { BookCheckoutPage } from './layouts/BookCheckoutPage/BookCheckoutPage';
 import { oktaConfig } from './lib/oktaConfig';
 import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
@@ -35,8 +35,8 @@ export const App = () => {
             <Route path='/home' element={<HomePage />}></Route>
             <Route path='/search' element={<SearchBooksPage />}></Route>
             <Route path='/checkout/:bookId' element={<BookCheckoutPage />}></Route>
-            <Route path='/login' element={< LoginWidget config={oktaConfig}/>}></Route>
-            <Route path='/login/callback' element={<LoginCallback/>}></Route>
+            <Route path='/login' element={< LoginWidget config={oktaConfig} />}></Route>
+            <Route path='/login/callback' element={<LoginCallback />}></Route>
           </Routes>
         </div>
         <Footer />
