@@ -8,9 +8,11 @@ import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import { BookCheckoutPage } from './layouts/BookCheckoutPage/BookCheckoutPage';
 import { oktaConfig } from './lib/oktaConfig';
 import { OktaAuth, toRelativeUrl } from "@okta/okta-auth-js";
-import { Security, LoginCallback } from '@okta/okta-react';
+import { Security, LoginCallback, SecureRoute } from '@okta/okta-react';
 import LoginWidget from './Auth/LoginWidget';
 import { ReviewListPage } from './layouts/BookCheckoutPage/ReviewListPage/ReviewListPage';
+import { ShelfPage } from './layouts/ShelfPage/ShelfPage';
+import { CustomSecureRoute } from './layouts/ShelfPage/CustomSecureRoute';
 
 const oktaAuth = new OktaAuth(oktaConfig);
 
@@ -39,6 +41,7 @@ export const App = () => {
             <Route path='/checkout/:bookId' element={<BookCheckoutPage />}></Route>
             <Route path='/login' element={< LoginWidget config={oktaConfig} />}></Route>
             <Route path='/login/callback' element={<LoginCallback />}></Route>
+            <Route path='/shelf' element={<CustomSecureRoute element={<ShelfPage />} />}></Route>
           </Routes>
         </div>
         <Footer />
