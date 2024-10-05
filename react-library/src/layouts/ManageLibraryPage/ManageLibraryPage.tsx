@@ -2,6 +2,7 @@ import { useOktaAuth } from "@okta/okta-react";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
 import { AdminMessages } from "./components/AdminMessages";
+import { AddNewBook } from "./components/AddNewBook";
 
 export const ManageLibraryPage = () =>{
 
@@ -38,7 +39,7 @@ export const ManageLibraryPage = () =>{
                     <div className="nav nav-tabs" id="nav-tab" role="tablist">
                         <button onClick={addBookClickFunction} className="nav-link active" id="nav-add-book-tab" data-bs-toggle="tab" 
                         data-bs-target="#nav-add-book" type="button" role="tab" aria-controls="nav-add-book" aria-selected="false">
-                            Add new book
+                            <AddNewBook />
                         </button>
                         <button onClick={changeQuantityOfBooksClickFunction} className="nav-link" id="nav-quantity-tab" data-bs-toggle="tab" 
                         data-bs-target="#nav-quantity" type="button" role="tab" aria-controls="nav-quantity" aria-selected="true">
